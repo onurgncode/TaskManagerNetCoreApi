@@ -4,7 +4,7 @@ using StaticKimlikKarti.Models;
 
 namespace buseferokey.Controllers
 {
-    
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
 
@@ -19,7 +19,7 @@ namespace buseferokey.Controllers
             _contextDb = contextDb;
         }
 
-        
+
         
         [HttpGet(Name = "GetGorevler")]
         public IEnumerable<Gorev> Get()

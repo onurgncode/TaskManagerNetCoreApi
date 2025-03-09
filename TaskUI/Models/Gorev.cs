@@ -10,7 +10,7 @@ namespace StaticKimlikKarti.Models
         [Required(ErrorMessage = "Başlık alanı boş bırakılamaz.")]
         public byte tarih { get; set; }
         [Required(ErrorMessage = "Başlık alanı boş bırakılamaz.")]
-        public DateTime birthday { get; set; }
+        public DateTime olusturulma { get; set; }
         [Required(ErrorMessage = "Başlık alanı boş bırakılamaz.")]
         public string yazigirin { get; set; }
     }
