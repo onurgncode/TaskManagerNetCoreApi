@@ -1,0 +1,6 @@
+@buseferokey_HostAddress = http://localhost:5221
+
+GET {{buseferokey_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

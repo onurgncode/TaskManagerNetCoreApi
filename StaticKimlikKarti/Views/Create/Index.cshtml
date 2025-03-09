@@ -1,0 +1,40 @@
+﻿@{
+   
+        Layout = "_Layout";
+}
+@{
+    
+}
+<html>
+    <head>
+        <title></title>
+        </head>
+    <body>
+    <form method="post" asp-controller="Create" asp-action="Addleme">
+        <div class="form-group">
+            <label for="Baslik">Başlık Giriniz</label>
+            <input type="text" name="Baslik" class="form-control" placeholder="Kod yazılacak">
+        </div>
+        
+        <div class="form-group">
+            <label for="Tarih">Tarih Seçiniz</label>
+            <select multiple class="form-control" name="Tarih">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="birthday"></label>
+            <input type="date" name="birthday" value="@DateTime.Now" style="Display:none;">
+        </div>
+        <div class="form-group">
+            <label for="yazigirin">Yazı Giriniz</label>
+            <textarea class="form-control" name="yazigirin" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    </body>
+</html>
