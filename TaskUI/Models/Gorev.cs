@@ -13,5 +13,7 @@ namespace StaticKimlikKarti.Models
         public DateTime olusturulma { get; set; }
         [Required(ErrorMessage = "Başlık alanı boş bırakılamaz.")]
         public string yazigirin { get; set; }
+
+        
     }
 }

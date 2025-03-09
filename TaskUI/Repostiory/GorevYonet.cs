@@ -23,5 +23,13 @@ namespace StaticKimlikKarti.Repostiory
             _contextDb.SaveChanges();
             return gorev;
         }
+
+        public void Delete(int Id)
+        {
+            Gorev deleted = _contextDb.gorev.FirstOrDefault(gorev => gorev.id == Id);
+            _contextDb.gorev.Remove(deleted);
+            _contextDb.SaveChanges();
+            
+        }
     }
 }

@@ -12,6 +12,7 @@
             <th scope="col">Kaç Günlük</th>
             <th scope="col">Oluşturulma Tarihi</th>
             <th scope="col">Yapılacak</th>
+            <th scope="col">Silme İşlemi</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +25,13 @@
                 <td>@gorev.tarih</td>
                 <td>@gorev.olusturulma.ToString("dd.MM.yyyy")</td>
                 <td>@gorev.yazigirin</td>
+                <td>
+
+                    <form asp-controller="Create" asp-action="Silme" method="post">
+                        <input type="text" name="id" class="form-control" value="@gorev.id" style="Display:none">
+                        <button type="submit" class="btn btn-primary">Sil</button>
+                    </form>
+                </td>
             </tr>
             }
            

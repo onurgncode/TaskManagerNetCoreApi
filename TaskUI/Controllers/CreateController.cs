@@ -35,5 +35,12 @@ namespace StaticKimlikKarti.Controllers
             var listem = _gorevYonet.GetAll();
             return View(listem);
         }
+
+        [HttpPost]
+        public IActionResult Silme(int id)
+        {
+            _gorevYonet.Delete(id);
+            return RedirectToAction("Listele");
+        }
     }
 }
