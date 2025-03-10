@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StaticKimlikKarti.Models;
 using StaticKimlikKarti.Repostiory;
+using TaskUI.Repostiory;
 
 namespace StaticKimlikKarti.Controllers
 {
@@ -12,6 +13,7 @@ namespace StaticKimlikKarti.Controllers
         {
             _gorevYonet = gorevYonet;
         }
+        
 
         public IActionResult Index()
         {
@@ -42,5 +44,16 @@ namespace StaticKimlikKarti.Controllers
             _gorevYonet.Delete(id);
             return RedirectToAction("Listele");
         }
+        
+        [HttpPost]
+        public IActionResult Tamamla(bool veri,int id)
+        {
+            
+            _gorevYonet.Complate(veri,id);
+            return RedirectToAction("Listele");
+        }
+        
+
+
     }
 }

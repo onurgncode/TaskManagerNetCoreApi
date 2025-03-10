@@ -22,9 +22,28 @@
             <tr>
                 <th scope="row">@gorev.id</th>
                 <td>@gorev.baslik</td>
-                <td>@gorev.tarih</td>
                 <td>@gorev.olusturulma.ToString("dd.MM.yyyy")</td>
                 <td>@gorev.yazigirin</td>
+                <form asp-controller="Create" asp-action="Tamamla" method="post">
+                <td>
+                    <div class="form-check">
+                        <input type="text" name="id" class="form-control" value="@gorev.id" style="Display:none">
+                        @{if(gorev.tamamlandi == true)
+                            {
+                                    @Html.CheckBox("Veri",true);
+                            }
+                           else{
+                                    @Html.CheckBox("Veri")
+                           }
+                       }
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Tamamlandı
+                        </label>
+                    </div>
+                </td>
+                <td><button type="submit" class="btn btn-primary">Güncelle</button></td>
+                
+                </form>
                 <td>
 
                     <form asp-controller="Create" asp-action="Silme" method="post">
@@ -34,7 +53,7 @@
                 </td>
             </tr>
             }
-           
+
         
         
     </tbody>

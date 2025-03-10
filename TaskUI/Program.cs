@@ -2,6 +2,7 @@ using System;
 using StaticKimlikKarti.Models;
 using Microsoft.EntityFrameworkCore;
 using StaticKimlikKarti.Repostiory;
+using TaskUI.Repostiory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppContextDb>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<GorevYonet>();
+builder.Services.AddScoped<RaporYonet>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

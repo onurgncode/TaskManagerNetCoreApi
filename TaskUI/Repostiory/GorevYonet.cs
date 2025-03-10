@@ -2,7 +2,7 @@
 
 namespace StaticKimlikKarti.Repostiory
 {
-    public class GorevYonet
+    public class GorevYonet 
     {
         private readonly AppContextDb _contextDb;
 
@@ -30,6 +30,16 @@ namespace StaticKimlikKarti.Repostiory
             _contextDb.gorev.Remove(deleted);
             _contextDb.SaveChanges();
             
+        }
+
+        public void Complate(bool veri, int Id)
+        {
+                Gorev Tamamlandi = _contextDb.gorev.FirstOrDefault(x => x.id == Id);
+                Tamamlandi.tamamlandi = veri;
+                _contextDb.gorev.Update(Tamamlandi);
+                _contextDb.SaveChanges();
+            
+           
         }
     }
 }
